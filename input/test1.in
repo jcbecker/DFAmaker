@@ -4,3 +4,8 @@ senao
 
 <S> ::= a<A> | e<A> | i<A> | o<A> | u<A> 
 <A> ::= a<A> | e<A> | i<A> | o<A> | u<A> | ε
+            
+<S> ::= a<A> | b<B> 
+<A> ::= a<S> | b<C> | ε
+<B> ::= a<C> | b<S> | ε
+<C> ::= a<B> | b<A>
