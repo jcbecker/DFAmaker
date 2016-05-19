@@ -1,7 +1,7 @@
 import java.util.*;
 class GrammarRule{//this class must provide a rule for regular grammar
     private String terminal;
-    private String nontermimal;
+    private String nonterminal;
     
     public GrammarRule (String t, String nt){
         this.terminal=t;

@@ -14,7 +14,7 @@ class GrammarState{
         this.rules=rules;
     }
     public void addRule(String terminal, String nonterminal){
-        GrammarRule aux= new GrammarRule(terminal, nontermimal);
+        GrammarRule aux= new GrammarRule(terminal, nonterminal);
         rules.add(aux);
     }
     public void addRule(GrammarRule rule){
@@ -22,8 +22,17 @@ class GrammarState{
         
     }
     
+    public String getState(){
+        return state;
+    }
+    
+    public GrammarRule[] getRules(){
+        GrammarRule[] r = new GrammarRule[rules.size()];
+        return rules.toArray(r);
+    }
+    
     public boolean isFinal(){
-        for(int i=0;i<rules.size;i++){
+        for(int i=0;i<rules.size();i++){
             if(rules.get(i).isProductive()){
                 return true;
             }
