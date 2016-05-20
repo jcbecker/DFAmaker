@@ -36,11 +36,11 @@ class Dfamaker{
             spacer.add(rawinput.size());
             
             for (int i=1;i<spacer.size();i++){
-                if((spacer.get(i)-1) - (spacer.get(i-1)+1) > 0){//o intervalo precisa ser maior que uma linha
+                if((spacer.get(i)-1) - (spacer.get(i-1)) > 0){//o intervalo precisa ter pelo menos uma linha
                     System.out.println("Gramática da linha "+(spacer.get(i-1)+2)+" até "+spacer.get(i));//índices para imprimir as gramaticas (spacer.get(i-1)+2)+" até "+spacer.get(i)
                     Grammar grammar =new Grammar();
                     grammar.setRawInput(rawinput.subList(spacer.get(i-1)+1, spacer.get(i)));
-                    
+                    grammars.add(grammar);
                 }
             }
             
