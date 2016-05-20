@@ -1,20 +1,18 @@
 import java.util.*;
 class Grammar{
-    private List<GrammarState> s;
+    private List<GrammarState> states;
     
     
     public Grammar (){
-        s=new ArrayList<GrammarState>();
+        states=new ArrayList<GrammarState>();
     }
     
     
     public void addState(GrammarState state){
-        this.s.add(state);
+        states.add(state);
     }
-    public GrammarState[] getStates(){
-        GrammarState[] r= new GrammarState[s.size()];
-        r=s.toArray(r);
-        return r;
+    public List<GrammarState> getStates(){
+        return states;
     }
     
     public void setRawInput(List<String> input){

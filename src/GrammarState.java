@@ -28,9 +28,8 @@ class GrammarState{
         return state;
     }
     
-    public GrammarRule[] getRules(){
-        GrammarRule[] r = new GrammarRule[rules.size()];
-        return rules.toArray(r);
+    public List<GrammarRule> getRules(){
+        return rules;
     }
     
     public boolean isFinal(){
