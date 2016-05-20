@@ -21,7 +21,11 @@ class Grammar{
         System.out.println("Nova Gramática reconhecida de tamanho "+input.length);
         for (int i=0;i<input.length;i++){
             System.out.println(input[i]);
+            GrammarState myst;
+            myst= new GrammarState();
+            myst.setByRaw(input[i].trim());
         }
+        
         
         
     }

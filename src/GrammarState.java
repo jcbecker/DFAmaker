@@ -4,7 +4,9 @@ class GrammarState{
     private String state;
     private List<GrammarRule> rules;
     
-    
+    public GrammarState (){
+        rules = new ArrayList<GrammarRule>();
+    }
     public GrammarState(String name){
         this.state=name;
         rules = new ArrayList<GrammarRule>();
@@ -38,5 +40,25 @@ class GrammarState{
             }
         }
         return false;
+    }
+    
+    public void setByRaw(String raw){
+        String[] parts =raw.split("::=");
+        if (parts.length==2){
+            String st =parts[0].trim();
+            if(st.startsWith("<") && st.endsWith(">")){//"smiles".substring(1, 5) returns "mile"
+                st=st.substring(1, st.length() -1).trim();
+                //System.out.println(st);
+                this.state=st;
+            }else {
+                System.out.println("wtf?");
+            }
+            
+            
+            
+        }else{
+            System.out.println("não dividiu em duas pares");
+        }
+        
     }
 }

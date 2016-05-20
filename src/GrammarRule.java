@@ -5,7 +5,7 @@ class GrammarRule{//this class must provide a rule for regular grammar
     
     public GrammarRule (String t, String nt){
         this.terminal=t;
-        this.nontermimal=nt;
+        this.nonterminal=nt;
     }
     
     public String getTerminal(){
