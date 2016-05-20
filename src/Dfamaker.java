@@ -39,13 +39,8 @@ class Dfamaker{
             for (int i=1;i<spacer.size();i++){
                 if((spacer.get(i)-1) - (spacer.get(i-1)+1) > 0){//o intervalo precisa ser maior que uma linha
                     System.out.println("Gramática da linha "+(spacer.get(i-1)+2)+" até "+spacer.get(i));//índices para imprimir as gramaticas (spacer.get(i-1)+2)+" até "+spacer.get(i)
-                    int glength=spacer.get(i)   -    spacer.get(i-1) -1;
-                    //System.out.println(glength);
-                    String[] gambiarra = new String[glength];
-                    
-                    gambiarra=rawinput.subList(spacer.get(i-1)+1, spacer.get(i)).toArray(gambiarra);
                     Grammar grammar =new Grammar();
-                    grammar.setRawInput(gambiarra);
+                    grammar.setRawInput(rawinput.subList(spacer.get(i-1)+1, spacer.get(i)));
                     
                 }
             }

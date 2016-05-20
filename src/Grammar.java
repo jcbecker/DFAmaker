@@ -17,13 +17,13 @@ class Grammar{
         return r;
     }
     
-    public void setRawInput(String[] input){
-        System.out.println("Nova Gramática reconhecida de tamanho "+input.length);
-        for (int i=0;i<input.length;i++){
-            System.out.println(input[i]);
+    public void setRawInput(List<String> input){
+        System.out.println("Nova Gramática reconhecida de tamanho "+input.size());
+        for (int i=0;i<input.size();i++){
+            System.out.println(input.get(i));
             GrammarState myst;
             myst= new GrammarState();
-            myst.setByRaw(input[i].trim());
+            myst.setByRaw(input.get(i).trim());
         }
         
         
