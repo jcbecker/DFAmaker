@@ -41,6 +41,23 @@ class GrammarState{
         return false;
     }
     
+    public String getAllRulesToString(){
+        String outp=new String();
+        for(int i=0; i<rules.size();i++){
+            if (i!=0)
+                outp+=" | ";
+            String t=rules.get(i).getTerminal();
+            String nt=rules.get(i).getNonTerminal();
+            outp+=t+"<"+nt+">";
+        }
+        return outp;
+    }
+    
+    public String getStateToString(){//build a left regular grammar in BNF
+        return "<"+state+">"+" ::= "+this.getAllRulesToString();
+    }
+    
+    
     public void setByRaw(String raw){
         String[] parts =raw.split("::=");
         if (parts.length==2){
@@ -49,11 +66,21 @@ class GrammarState{
                 st=st.substring(1, st.length() -1).trim();
                 //System.out.println(st);
                 this.state=st;
+                String[] strRules=parts[1].split("\\|");
+                //System.out.println ("Estado "+state+" ::= "+parts[1]);
+                //System.out.println("Reconheceu "+strRules.length+" Produções");
+                for (int i=0;i<strRules.length;i++){
+                    rules.add(new GrammarRule());
+                    rules.get(i).setByRaw(strRules[i].trim());
+                }
+                
+                
+                
+                
+                
             }else {
                 System.out.println("wtf?");
             }
-            
-            
             
         }else{
             System.out.println("não dividiu em duas pares");

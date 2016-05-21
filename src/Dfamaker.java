@@ -44,7 +44,15 @@ class Dfamaker{
                 }
             }
             
-            
+            System.out.println("Grammars read "+grammars.size());
+            for (int i=0; i<grammars.size();i++){
+                System.out.println("Grammar "+i);
+                String []aux =grammars.get(i).getBnfToStrArray();
+                for (int j=0;j<aux.length;j++){
+                    System.out.println(aux[j]);
+                }
+                
+            }
             
             
             
