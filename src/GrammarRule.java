@@ -41,7 +41,13 @@ class GrammarRule{//this class must provide a rule for regular grammar
                 System.out.println("ERROR: split in < return a number diferent from 2");
             }
         }else if(rinput.startsWith("<")){//right regular grammar
-            
+            String[] aux =rinput.split(">");
+            if (aux.length==2){
+                terminal=aux[1].trim();
+                nonterminal=aux[0].trim().substring(1, aux[0].length());
+            }else{
+                System.out.println("ERROR: split in > return a number diferent from 2");
+            }
         }
         else if (!rinput.contains(">")  && !rinput.contains("<")  && !rinput.isEmpty()){//have just one terminal
             terminal=rinput;

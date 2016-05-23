@@ -25,7 +25,7 @@ class Grammar{
     public void setRawInput(List<String> input){
         System.out.println("Nova Gramática reconhecida de tamanho "+input.size());
         for (int i=0;i<input.size();i++){
-            System.out.println(input.get(i));
+            //System.out.println(input.get(i));
             states.add(new GrammarState());
             states.get(i).setByRaw(input.get(i).trim());
             
