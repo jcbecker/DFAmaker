@@ -48,7 +48,9 @@ class GrammarState{
                 outp+=" | ";
             String t=rules.get(i).getTerminal();
             String nt=rules.get(i).getNonTerminal();
-            outp+=t+"<"+nt+">";
+            outp+=t;
+            if(!nt.isEmpty())
+                outp+="<"+nt+">";
         }
         return outp;
     }
